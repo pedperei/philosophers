@@ -6,7 +6,7 @@
 /*   By: pedperei <pedperei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 14:10:22 by pedperei          #+#    #+#             */
-/*   Updated: 2023/03/15 16:00:19 by pedperei         ###   ########.fr       */
+/*   Updated: 2023/03/15 19:43:49 by pedperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int					eating_sleeping(t_philo *philo);
 int					thinking(t_philo *philo);
 void				take_forks(t_philo *philo);
 int					philo_dead(t_philo *philo);
+int					check_philo_eats(t_philo *philo);
 long int			calc_time(void);
 void				print_instruction(t_philo *philo, long int now, char c);
 void				ft_usleep(int ms);

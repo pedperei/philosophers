@@ -6,12 +6,15 @@
 /*   By: pedperei <pedperei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 19:57:45 by pedperei          #+#    #+#             */
-/*   Updated: 2023/03/15 15:47:34 by pedperei         ###   ########.fr       */
+/*   Updated: 2023/03/15 19:52:34 by pedperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
+/*Al instructions will be printed to terminal dependind on char passed
+only 1 instruction can be printed at the same time because of mutexes.
+When philo is eating is printed last eat time is updated.*/
 void	print_instruction(t_philo *philo, long int now, char c)
 {
 	long int	delta;
@@ -81,6 +84,8 @@ int	ft_atoi(const char *str)
 	return (sinal * res);
 }
 
+/*Calculate current time using gettimeofday function
+seconds * 1000 + useconds / 1000 = time in ms - microseconds*/
 long int	calc_time(void)
 {
 	struct timeval	now;
@@ -91,6 +96,7 @@ long int	calc_time(void)
 	return (time);
 }
 
+/*sleep x microseconds*/
 void	ft_usleep(int ms)
 {
 	usleep(ms * 1000);
