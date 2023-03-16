@@ -4,6 +4,7 @@ C_FILES= ft_aux.c\
 		 process.c\
 		 main.c\
 		 cycle.c\
+		 check_args.c\
 
 
 CC=cc

@@ -6,7 +6,7 @@
 /*   By: pedperei <pedperei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 14:18:00 by pedperei          #+#    #+#             */
-/*   Updated: 2023/03/15 18:41:17 by pedperei         ###   ########.fr       */
+/*   Updated: 2023/03/16 14:58:36 by pedperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ t_philo	*init_philos_mutex(t_info *info)
 
 	philos = (t_philo *)ft_calloc(info->nbr_philo, sizeof(t_philo));
 	info->forks = (pthread_mutex_t *)ft_calloc(info->nbr_philo,
-			sizeof(pthread_mutex_t));
+												sizeof(pthread_mutex_t));
 	if (!philos || !info->forks)
 		return (0);
 	i = 0;
@@ -120,9 +120,10 @@ int	main(int argc, char **argv)
 	t_philo	*philos;
 	t_info	*info;
 
-	if (argc != 5 && argc != 6)
+	if ((argc != 5 && argc != 6) || !(check_args(argc, argv))
+		|| !(ft_int_min_max(argc, argv)))
 	{
-		printf("Invalid number of args");
+		printf("Arguments passed are invalid");
 		return (0);
 	}
 	else
