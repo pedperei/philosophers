@@ -6,7 +6,7 @@
 /*   By: pedperei <pedperei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 14:18:00 by pedperei          #+#    #+#             */
-/*   Updated: 2023/03/16 14:58:36 by pedperei         ###   ########.fr       */
+/*   Updated: 2023/03/16 15:07:57 by pedperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ t_philo	*init_philos_mutex(t_info *info)
 
 	philos = (t_philo *)ft_calloc(info->nbr_philo, sizeof(t_philo));
 	info->forks = (pthread_mutex_t *)ft_calloc(info->nbr_philo,
-												sizeof(pthread_mutex_t));
+			sizeof(pthread_mutex_t));
 	if (!philos || !info->forks)
 		return (0);
 	i = 0;
